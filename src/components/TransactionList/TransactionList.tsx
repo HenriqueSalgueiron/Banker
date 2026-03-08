@@ -41,6 +41,7 @@ export function TransactionList({
     );
   }
 
+  // check: talvez alterar isso dps pra ser parametro de busca e a API fake retornar já filtrado
   const filtered = transactions.filter((t) =>
     t.description.toLowerCase().includes(search.toLowerCase()),
   );
