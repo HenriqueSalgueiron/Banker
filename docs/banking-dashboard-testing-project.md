@@ -263,25 +263,24 @@ Banking Dashboard (Projeto pessoal)
 
 # Roadmap de Estudo
 
-## Semana 1 -- Jest
+Estratégia: **veja funcionar → garanta que funciona → simule cenários**
 
-- fundamentos de testes
-- unit tests
-- mocks
-- coverage
-
-## Semana 2 -- React Testing Library
-
-- renderização
-- queries
-- userEvent
-- testes de componentes
-
-## Semana 3 -- Integração
-
-- MSW
-- testes de fluxo
-- Playwright (E2E)
+1. Setup do projeto (Next.js, TypeScript, Tailwind)
+2. Configuração do Jest + React Testing Library
+3. Funções utilitárias (`currency.ts`, `date.ts`)
+4. Testes unitários das funções utilitárias
+5. Montar a tela do dashboard (composição dos componentes)
+6. Ver os componentes funcionando visualmente
+7. Testes de componentes com React Testing Library (`render`, `screen`, queries)
+8. Testar estados: renderização normal, loading, erro, empty state
+9. Interações com `userEvent` (busca, filtro)
+10. Criar hooks (`useTransactions`, `useTransfer`)
+11. Criar services (`api.ts`)
+12. Configurar MSW para mock de API
+13. Testes de hooks
+14. Testes de integração (fluxo completo: transferência → atualização de saldo)
+15. Playwright E2E (opcional)
+16. Cobertura de testes acima de 80%
 
 ---
 
