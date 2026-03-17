@@ -1,5 +1,5 @@
-import { BalanceCard } from "@/components/BalanceCard/BalanceCard";
-import { TransactionList } from "@/components/TransactionList/TransactionList";
+import { BalanceCard } from "@/components/BalanceCard";
+import { TransactionList } from "@/components/TransactionList";
 import { mockAccount } from "@/mocks/account";
 
 export default function Home() {
