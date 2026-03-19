@@ -15,7 +15,7 @@ Projeto de estudo focado em testes frontend. Simula um Internet Banking com Next
 
 - Next.js 16, React 19, TypeScript
 - Tailwind CSS 4
-- Jest 30 + React Testing Library + MSW 2
+- Jest 30 + React Testing Library
 - date-fns para datas
 
 ## Estrutura
@@ -28,7 +28,7 @@ src/
   services/         # API client (api.ts)
   utils/            # Funções utilitárias (currency.ts, date.ts)
   types/            # TypeScript types (transaction.ts, account.ts)
-  mocks/            # MSW handlers
+  mocks/            # Mock data
   tests/            # Testes (espelham a estrutura de src/)
 ```
 

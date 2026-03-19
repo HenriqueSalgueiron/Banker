@@ -9,6 +9,9 @@ const config: Config = {
   verbose: true,
   displayName: "banker",
   testEnvironment: "jsdom",
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1",
+  },
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   coverageThreshold: {
     global: {

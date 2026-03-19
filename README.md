@@ -26,7 +26,6 @@ Demonstrar dominio em testes frontend modernos:
 
 - Jest 30
 - React Testing Library
-- Mock Service Worker (MSW) 2
 - Playwright (opcional para E2E)
 
 ## Funcionalidades
@@ -47,7 +46,7 @@ src/
   services/         # API client (api.ts)
   utils/            # Funcoes utilitarias (currency.ts, date.ts)
   types/            # TypeScript types
-  mocks/            # MSW handlers e mock data
+  mocks/            # Mock data
   tests/            # Testes (espelham a estrutura de src/)
 ```
 
@@ -69,17 +68,9 @@ Testam logica isolada dos hooks (`useTransactions`, `useTransfer`) com cenarios 
 
 Testam fluxos reais: usuario realiza transferencia -> API e chamada -> saldo e atualizado -> interface reflete mudanca.
 
-### Mock de API com MSW
+### Mock de API
 
-MSW intercepta chamadas HTTP durante os testes, permitindo simular respostas, erros e latencia sem depender de backend.
-
-```ts
-import { http, HttpResponse } from "msw";
-
-http.get("/api/transactions", () => {
-  return HttpResponse.json(mockTransactions);
-});
-```
+Mocking com `jest.mock()`, `jest.fn()` e `jest.spyOn()` para isolar dependencias e simular respostas de API nos testes.
 
 ## Como rodar
 
