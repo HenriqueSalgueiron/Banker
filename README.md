@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Banking Dashboard
 
-## Getting Started
+Simulacao de internet banking construida com Next.js e TypeScript, com foco em **testes frontend**.
 
-First, run the development server:
+## Objetivo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Demonstrar dominio em testes frontend modernos:
+
+- Testes unitarios
+- Testes de componentes
+- Testes de hooks
+- Testes de integracao
+- Mock de API
+- Testes end-to-end (opcional)
+
+## Stack
+
+**Frontend:**
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+
+**Testes:**
+
+- Jest 30
+- React Testing Library
+- Mock Service Worker (MSW) 2
+- Playwright (opcional para E2E)
+
+## Funcionalidades
+
+- Saldo da conta
+- Lista de transacoes
+- Transferencia entre contas
+- Filtro e busca por descricao
+- Estados de loading, erro e empty state
+
+## Arquitetura
+
+```
+src/
+  app/              # Pages e layouts do Next.js
+  components/       # Componentes React
+  hooks/            # Custom hooks (useTransactions, useTransfer)
+  services/         # API client (api.ts)
+  utils/            # Funcoes utilitarias (currency.ts, date.ts)
+  types/            # TypeScript types
+  mocks/            # MSW handlers e mock data
+  tests/            # Testes (espelham a estrutura de src/)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tipos de Testes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Testes Unitarios
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Testam funcoes puras da aplicacao (`formatCurrency`, `formatDate`, etc).
 
-## Learn More
+### Testes de Componentes
 
-To learn more about Next.js, take a look at the following resources:
+Testam renderizacao e comportamento dos componentes com React Testing Library: renderizacao correta, loading, erro e empty state.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Testes de Hooks
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Testam logica isolada dos hooks (`useTransactions`, `useTransfer`) com cenarios de loading, sucesso e erro.
 
-## Deploy on Vercel
+### Testes de Integracao
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Testam fluxos reais: usuario realiza transferencia -> API e chamada -> saldo e atualizado -> interface reflete mudanca.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Mock de API com MSW
+
+MSW intercepta chamadas HTTP durante os testes, permitindo simular respostas, erros e latencia sem depender de backend.
+
+```ts
+import { http, HttpResponse } from "msw";
+
+http.get("/api/transactions", () => {
+  return HttpResponse.json(mockTransactions);
+});
+```
+
+## Como rodar
+
+```bash
+npm run dev           # dev server
+npm test              # rodar testes
+npm run test:watch    # testes em modo watch
+npm run test:coverage # testes com cobertura
+npm run lint          # ESLint
+npm run build         # build de producao
+```
+
+## Cobertura
+
+Meta: 80%+
