@@ -1,6 +1,6 @@
 import { BalanceCard } from "@/components/BalanceCard";
 import { TransactionList } from "@/components/TransactionList";
-import { mockAccount } from "@/mocks/account";
+import { mockAccount } from "@/mock/account";
 
 export default function Home() {
   return (
