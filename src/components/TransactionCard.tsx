@@ -10,7 +10,10 @@ export function TransactionCard({ transaction }: TransactionCardProps) {
   const isDeposit = transaction.type === "deposit";
 
   return (
-    <div className="flex items-center justify-between rounded-xl border border-zinc-200 bg-white px-5 py-4 dark:border-zinc-700 dark:bg-zinc-900">
+    <div
+      data-testid="transaction-card"
+      className="flex items-center justify-between rounded-xl border border-zinc-200 bg-white px-5 py-4 dark:border-zinc-700 dark:bg-zinc-900"
+    >
       <div className="flex flex-col gap-1">
         <p className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
           {transaction.description}

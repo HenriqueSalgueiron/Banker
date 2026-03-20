@@ -17,7 +17,7 @@ export function Dashboard() {
     );
   }
 
-  if (!account || isLoading) {
+  if (isLoading || !account) {
     return (
       <div className="min-h-screen bg-zinc-50 dark:bg-black">
         <main className="mx-auto max-w-lg px-4 py-8">

@@ -6,6 +6,7 @@ jest.mock("@/services/api", () => ({
   getAccount: jest.fn(),
 }));
 
+//fiz desse jeito pra forçar tipagem
 const mockGetAccount = getAccount as jest.MockedFunction<typeof getAccount>;
 
 describe("useAccount", () => {
@@ -21,7 +22,7 @@ describe("useAccount", () => {
 
     // waitFor faz retentativas da asserção até que ela seja verdadeira ou atinja timeout. isso é necessário para aguardar até que o useEffect do hook seja executado e atualize o estado.
     await waitFor(() => {
-      expect(result.current.data).toEqual({
+      expect(result.current.account).toEqual({
         id: "1",
         owner: "John Doe",
         balance: 1000,
@@ -37,7 +38,7 @@ describe("useAccount", () => {
     const { result } = renderHook(() => useAccount());
 
     await waitFor(() => {
-      expect(result.current.data).toBeNull();
+      expect(result.current.account).toBeNull();
       expect(result.current.isLoading).toBe(false);
       expect(result.current.error).toEqual(new Error("Failed to fetch"));
     });
@@ -47,7 +48,7 @@ describe("useAccount", () => {
     mockGetAccount.mockReturnValue(new Promise(() => {}));
     const { result } = renderHook(() => useAccount());
 
-    expect(result.current.data).toBeNull();
+    expect(result.current.account).toBeNull();
     expect(result.current.isLoading).toBe(true);
     expect(result.current.error).toBeNull();
   });
