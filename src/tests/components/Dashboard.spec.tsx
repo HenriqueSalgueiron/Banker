@@ -45,9 +45,9 @@ describe("Dashboard", () => {
 
     await waitFor(() => {
       expect(screen.getByText("R$ 1.000,00")).toBeInTheDocument();
-      expect(screen.getByText("R$ 500,00")).toBeInTheDocument();
-      expect(screen.getByText("R$ 200,00")).toBeInTheDocument();
-      expect(screen.getByText("R$ 300,00")).toBeInTheDocument();
+      expect(screen.getByText("+ R$ 500,00")).toBeInTheDocument();
+      expect(screen.getByText("- R$ 200,00")).toBeInTheDocument();
+      expect(screen.getByText("+ R$ 300,00")).toBeInTheDocument();
     });
   });
 

@@ -8,7 +8,7 @@ export const mockAccount: Account = {
     {
       id: "t1",
       type: "deposit",
-      amount: 5000,
+      amount: 500,
       description: "Salário",
       date: "2026-03-01",
     },
