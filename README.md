@@ -2,31 +2,11 @@
 
 Simulacao de internet banking construida com Next.js e TypeScript, com foco em **testes frontend**.
 
-## Objetivo
-
-Demonstrar dominio em testes frontend modernos:
-
-- Testes unitarios
-- Testes de componentes
-- Testes de hooks
-- Testes de integracao
-- Mock de API
-- Testes end-to-end (opcional)
-
 ## Stack
 
-**Frontend:**
+**Frontend:** Next.js 16 · React 19 · TypeScript · Tailwind CSS 4
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS 4
-
-**Testes:**
-
-- Jest 30
-- React Testing Library
-- Playwright (opcional para E2E)
+**Testes:** Jest 30 · React Testing Library · user-event
 
 ## Funcionalidades
 
@@ -36,53 +16,37 @@ Demonstrar dominio em testes frontend modernos:
 - Filtro e busca por descricao
 - Estados de loading, erro e empty state
 
+## Testes
+
+29 testes · 100% de cobertura
+
+| Tipo | Quantidade | Descricao |
+|------|-----------|-----------|
+| Unitarios | 9 | Funcoes puras (`formatCurrency`, `formatDate`, `adjustToBusinessDay`) |
+| Componentes | 11 | Renderizacao, loading, erro, empty state, interacoes com `userEvent` |
+| Hooks | 6 | `useAccount` e `useTransfer` com `jest.mock()`, `jest.fn()`, `renderHook` |
+| Integracao | 3 | Fluxo completo: service → hook → componentes no Dashboard |
+
 ## Arquitetura
 
 ```
 src/
-  app/              # Pages e layouts do Next.js
-  components/       # Componentes React
-  hooks/            # Custom hooks (useTransactions, useTransfer)
+  app/              # Pages, layouts e API routes (Next.js)
+  components/       # Componentes React (BalanceCard, TransactionCard, TransactionList, Dashboard)
+  hooks/            # Custom hooks (useAccount, useTransfer)
   services/         # API client (api.ts)
   utils/            # Funcoes utilitarias (currency.ts, date.ts)
   types/            # TypeScript types
-  mocks/            # Mock data
+  mock/             # Mock data
   tests/            # Testes (espelham a estrutura de src/)
 ```
-
-## Tipos de Testes
-
-### Testes Unitarios
-
-Testam funcoes puras da aplicacao (`formatCurrency`, `formatDate`, etc).
-
-### Testes de Componentes
-
-Testam renderizacao e comportamento dos componentes com React Testing Library: renderizacao correta, loading, erro e empty state.
-
-### Testes de Hooks
-
-Testam logica isolada dos hooks (`useTransactions`, `useTransfer`) com cenarios de loading, sucesso e erro.
-
-### Testes de Integracao
-
-Testam fluxos reais: usuario realiza transferencia -> API e chamada -> saldo e atualizado -> interface reflete mudanca.
-
-### Mock de API
-
-Mocking com `jest.mock()`, `jest.fn()` e `jest.spyOn()` para isolar dependencias e simular respostas de API nos testes.
 
 ## Como rodar
 
 ```bash
 npm run dev           # dev server
 npm test              # rodar testes
-npm run test:watch    # testes em modo watch
 npm run test:coverage # testes com cobertura
 npm run lint          # ESLint
 npm run build         # build de producao
 ```
-
-## Cobertura
-
-Meta: 80%+
