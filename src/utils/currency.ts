@@ -7,7 +7,9 @@ function FormatMoney(
     style: "currency",
     currency: currency,
     minimumFractionDigits: 2,
-  }).format(value);
+  })
+    .format(value)
+    .replace(/\u00A0/g, " ");
 }
 
 export function formatBRLMoney(
