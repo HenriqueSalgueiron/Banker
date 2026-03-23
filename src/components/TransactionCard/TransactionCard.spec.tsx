@@ -1,4 +1,4 @@
-import { TransactionCard } from "@/components/TransactionCard";
+import { TransactionCard } from "@/components/TransactionCard/TransactionCard";
 import { render, screen } from "@testing-library/react";
 
 describe("TransactionCard component", () => {

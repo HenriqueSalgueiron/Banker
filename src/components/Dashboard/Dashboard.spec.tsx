@@ -1,4 +1,4 @@
-import { Dashboard } from "@/components/Dashboard";
+import { Dashboard } from "@/components/Dashboard/Dashboard";
 import { getAccount } from "@/services/api";
 import { Account } from "@/types/account";
 import { render, screen, waitFor } from "@testing-library/react";

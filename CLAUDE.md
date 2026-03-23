@@ -23,18 +23,25 @@ Projeto de estudo focado em testes frontend. Simula um Internet Banking com Next
 ```
 src/
   app/              # Pages e layouts do Next.js
-  components/       # Componentes React (BalanceCard, TransactionCard, TransactionList)
-  hooks/            # Custom hooks (useTransactions, useTransfer)
+  components/       # Componentes React, cada um em sua própria pasta
+    BalanceCard/
+      BalanceCard.tsx
+      BalanceCard.spec.tsx
+      index.ts
+  hooks/            # Custom hooks + testes colocados ao lado
+    useAccount.ts
+    useAccount.spec.ts
   services/         # API client (api.ts)
-  utils/            # Funções utilitárias (currency.ts, date.ts)
+  utils/            # Funções utilitárias + testes colocados ao lado
+    currency.ts
+    currency.spec.ts
   types/            # TypeScript types (transaction.ts, account.ts)
-  mocks/            # Mock data
-  tests/            # Testes (espelham a estrutura de src/)
+  mock/             # Mock data
 ```
 
 ## Convenções
 
-- Testes ficam em `src/tests/` espelhando a estrutura original (ex: `src/tests/utils/currency.spec.ts`)
+- Testes ficam ao lado do arquivo que testam (colocação)
 - Arquivos de teste usam sufixo `.spec.ts` / `.spec.tsx`
-- Componentes ficam em pastas próprias (ex: `components/BalanceCard/BalanceCard.tsx`)
+- Componentes ficam em pastas próprias com `index.ts` barrel (ex: `components/BalanceCard/BalanceCard.tsx`)
 - Idioma do código: inglês. Documentação/commits: português ok.
