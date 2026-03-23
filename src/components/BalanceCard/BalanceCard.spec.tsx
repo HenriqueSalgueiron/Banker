@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { BalanceCard } from "@/components/BalanceCard";
+import { BalanceCard } from "@/components/BalanceCard/BalanceCard";
 
 describe("BalanceCard component", () => {
   it("should display the correct name and balance value", () => {

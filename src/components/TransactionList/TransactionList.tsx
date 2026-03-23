@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Transaction } from "@/types/transaction";
-import { TransactionCard } from "@/components/TransactionCard";
+import { TransactionCard } from "@/components/TransactionCard/TransactionCard";
 
 interface TransactionListProps {
   transactions: Transaction[];

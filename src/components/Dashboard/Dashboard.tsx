@@ -1,7 +1,7 @@
 "use client";
 
-import { BalanceCard } from "@/components/BalanceCard";
-import { TransactionList } from "@/components/TransactionList";
+import { BalanceCard } from "@/components/BalanceCard/BalanceCard";
+import { TransactionList } from "@/components/TransactionList/TransactionList";
 import { useAccount } from "@/hooks/useAccount";
 
 export function Dashboard() {

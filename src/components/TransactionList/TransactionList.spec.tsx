@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { TransactionList } from "@/components/TransactionList";
+import { TransactionList } from "@/components/TransactionList/TransactionList";
 
 describe("TransactionList component", () => {
   it("should display a transaction list", () => {
