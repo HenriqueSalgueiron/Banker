@@ -1,6 +1,6 @@
 # Banker - Banking Dashboard
 
-Projeto de estudo focado em testes frontend. Simula um Internet Banking com Next.js.
+Projeto de estudo focado em testes frontend e CI/CD. Simula um Internet Banking com Next.js.
 
 ## Comandos
 
@@ -17,6 +17,7 @@ Projeto de estudo focado em testes frontend. Simula um Internet Banking com Next
 - Tailwind CSS 4
 - Jest 30 + React Testing Library
 - date-fns para datas
+- GitHub Actions (CI/CD) + Vercel (deploy)
 
 ## Estrutura
 
@@ -37,6 +38,8 @@ src/
     currency.spec.ts
   types/            # TypeScript types (transaction.ts, account.ts)
   mock/             # Mock data
+.github/
+  workflows/        # Pipeline CI/CD (GitHub Actions)
 ```
 
 ## Convenções

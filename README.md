@@ -2,13 +2,15 @@
 
 [![CI/CD](https://github.com/HenriqueSalgueiron/Banker/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/HenriqueSalgueiron/Banker/actions/workflows/ci-cd.yml)
 
-Simulacao de internet banking construida com Next.js e TypeScript, com foco em **testes frontend**.
+Simulacao de internet banking construida com Next.js e TypeScript, com foco em **testes frontend** e **CI/CD**.
 
 ## Stack
 
 **Frontend:** Next.js 16 · React 19 · TypeScript · Tailwind CSS 4
 
 **Testes:** Jest 30 · React Testing Library · user-event
+
+**CI/CD:** GitHub Actions · Vercel
 
 ## Funcionalidades
 
@@ -29,6 +31,19 @@ Simulacao de internet banking construida com Next.js e TypeScript, com foco em *
 | Hooks       | 6          | `useAccount` e `useTransfer` com `jest.mock()`, `jest.fn()`, `renderHook` |
 | Integracao  | 3          | Fluxo completo: service → hook → componentes no Dashboard                 |
 
+## CI/CD
+
+Pipeline automatizado com GitHub Actions que roda a cada push na `main` e em pull requests.
+
+| Etapa   | Descricao                                            |
+| ------- | ---------------------------------------------------- |
+| Lint    | Verifica padroes de codigo com ESLint                |
+| Testes  | Roda os 29 testes com Jest                           |
+| Build   | Compila o projeto com Next.js                        |
+| Deploy  | Deploy automatico na Vercel (apenas push na `main`)  |
+
+Deploy: [banker-yt3k.vercel.app](https://banker-yt3k.vercel.app)
+
 ## Arquitetura
 
 ```
@@ -40,7 +55,8 @@ src/
   utils/            # Funcoes utilitarias (currency.ts, date.ts)
   types/            # TypeScript types
   mock/             # Mock data
-  tests/            # Testes (espelham a estrutura de src/)
+.github/
+  workflows/        # Pipeline CI/CD (GitHub Actions)
 ```
 
 ## Como rodar
