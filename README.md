@@ -1,5 +1,7 @@
 # Banking Dashboard
 
+[![CI/CD](https://github.com/HenriqueSalgueiron/Banker/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/HenriqueSalgueiron/Banker/actions/workflows/ci-cd.yml)
+
 Simulacao de internet banking construida com Next.js e TypeScript, com foco em **testes frontend**.
 
 ## Stack
@@ -20,12 +22,12 @@ Simulacao de internet banking construida com Next.js e TypeScript, com foco em *
 
 29 testes · 100% de cobertura
 
-| Tipo | Quantidade | Descricao |
-|------|-----------|-----------|
-| Unitarios | 9 | Funcoes puras (`formatCurrency`, `formatDate`, `adjustToBusinessDay`) |
-| Componentes | 11 | Renderizacao, loading, erro, empty state, interacoes com `userEvent` |
-| Hooks | 6 | `useAccount` e `useTransfer` com `jest.mock()`, `jest.fn()`, `renderHook` |
-| Integracao | 3 | Fluxo completo: service → hook → componentes no Dashboard |
+| Tipo        | Quantidade | Descricao                                                                 |
+| ----------- | ---------- | ------------------------------------------------------------------------- |
+| Unitarios   | 9          | Funcoes puras (`formatCurrency`, `formatDate`, `adjustToBusinessDay`)     |
+| Componentes | 11         | Renderizacao, loading, erro, empty state, interacoes com `userEvent`      |
+| Hooks       | 6          | `useAccount` e `useTransfer` com `jest.mock()`, `jest.fn()`, `renderHook` |
+| Integracao  | 3          | Fluxo completo: service → hook → componentes no Dashboard                 |
 
 ## Arquitetura
 
@@ -50,3 +52,5 @@ npm run test:coverage # testes com cobertura
 npm run lint          # ESLint
 npm run build         # build de producao
 ```
+
+React · Next.js · React Native · Vue.js · TypeScript · JavaScript · HTML5 · CSS3 · Jest · Testing Library · REST APIs · Vuex · Pinia · Python · Django · PostgreSQL · Node.js · Docker · Zustand · Tailwind CSS · SASS · Git · Firebase · Figma · WCAG

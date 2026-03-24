@@ -1,0 +1,39 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  ci_cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositório na máquina
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js e cache de dependências na máquina
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Instalar dependências na máquina
+        run: npm ci
+
+      - name: Rodar lint
+        run: npm run lint
+
+      - name: Rodar testes
+        run: npm test
+
+      - name: Rodar build
+        run: npm run build
+
+      - name: Deploy na Vercel
+        if: github.event_name == 'push'
+        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
